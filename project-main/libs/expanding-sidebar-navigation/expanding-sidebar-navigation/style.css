@@ -1,0 +1,162 @@
+
+.side-navbar-container {
+  display: flex;
+  justify-content: right;
+  height: 100vh;
+  width: auto;
+  gap: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 78px;
+  height: 100vh;
+  /* background-color: var(--green); */
+  background-color: #ecbdc4;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+  z-index: 5;
+  /* border: 0.05px solid #000000; */
+  box-shadow: none;
+
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+
+
+}
+
+.main {
+  /* this width property adjustment is smart, ngl. (~ Lahiru) */
+  width: calc(100% - 78px);
+  transition: all 0.2s;
+  filter: none;
+  pointer-events: all;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1rem;
+  padding: 15px;
+  gap: 15px;
+  transition: all 0.3s;
+}
+
+
+
+.icon:hover {
+  background-color: #f5dce0;
+  cursor: pointer;
+}
+
+.navbar-btn{
+  background-color: transparent;
+}
+.navbar-btn:hover{
+  background-color: #f5dce0;
+  cursor: pointer;
+}
+
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  transition: all 0.8s;
+  align-items: center;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.navbar-list-btn{
+  background-color: transparent;
+}
+button:focus{
+  outline: none;
+}
+
+
+
+.p-title {
+  margin: 0%;
+}
+
+
+
+
+.icon-logout {
+  width: 100%;
+  height: 60px;
+  background-color: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.icon-logout:hover {
+  cursor: pointer;
+}
+
+
+.logout-container {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  gap: 10px;
+  border-bottom-right-radius: 23px;
+}
+
+.menu-container {
+  z-index: 1;
+  
+}
+
+
+#user-container {
+  display: flex;
+  flex-direction: column;
+  gap: -5px;
+}
+
+
+
+#user{
+  margin-bottom: 10px;
+}
+
+
+#product-backlog{
+  gap: 0%;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+

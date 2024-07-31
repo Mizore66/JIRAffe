@@ -1,0 +1,154 @@
+/* @media (min-width: 992px) {} */
+
+.page-content {
+  display: flex;
+  height: 100%;
+  /* padding: 1%; */
+}
+
+.page-content-col {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 10px;
+}
+
+.quote-container-col {
+  background-color: rgba(255, 0, 247, 0.192);
+  /* background-color: #f6b1c3; */
+  padding-right: 0px; /* this overwrites their bootstrap definitions */
+  /* background-image: url("../../assets/images/login_background_1.png"); */
+}
+
+.input-section-col{
+  padding-left: 0px;
+  padding-right: 1.5%;
+  
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image {
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 50px;
+  transform: scale(1.5);
+}
+
+.login-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: "Barlow-Regular";
+}
+
+.form-control {
+  border-radius: 10px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 3%;
+}
+
+.form-control:hover {
+  box-shadow: 0px 0px 30px 0.3px #000000;
+  border: none;
+}
+
+.form-control::selection {
+  border: none;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+#login-btn {
+  background-color: #ecbdc4;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px 0.1px #000000;
+  font-size: 30px;
+  margin-top: 30px;
+  font-family: "Baloo2-Medium";
+}
+
+
+.inputField {
+  border-radius: 30px;
+}
+
+.input-section {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////// TEXT ANIMATION /////////////////////////////////////// */
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+.animation-space {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  /* background-color: rgb(255, 0, 247); */
+  width: 500px;
+  max-width: 95%;
+  max-height: 90%;
+  /* padding-top: 5%; */
+  /* padding-bottom: 5%; */
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  font-family: "Barlow-Regular";
+  word-wrap: break-word;
+  z-index: 1;
+}
+
+#login-background{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.45;
+}
+
+/* .login-anim-text {
+  text-overflow: ellipsis;
+} */
+
+
+.author-text{
+  font-size: 10px;
+  font-family: "Barlow-Regular";
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////////////// */
+
+

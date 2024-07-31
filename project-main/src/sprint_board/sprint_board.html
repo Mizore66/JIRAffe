@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <title>Sprint Board</title>
+    <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+    <script type="module" src="../../constants.js"></script>
+    <script type="text/javascript" src="../../navigation.js"></script>
+    <link rel="stylesheet" href="../global_style.css">
+    <link rel="stylesheet" href="../global_fonts.css">
+    <link rel="stylesheet" href="sprint_board.css">
+    
+    <script type="module" src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/script.js"></script>
+    <link rel="stylesheet" href="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/style.css">
+    <script type="module" src="../../libs/sortablejs/Sortable.js"></script>
+    <script type="module" src="../../libs/sortablejs/modular/sortable.complete.esm.js"></script>
+    <script type="module" src="../../libs/chartJS/chart.umd.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="side-navbar-container">
+        <aside class="sidebar">
+            <ul class="menu-list">
+                <li>
+                    <div class="menu-container">
+                        <button type="button" class="icon navbar-btn" id="menu">
+                            <img src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/assets/images/menu.svg"
+                                alt="menu" />
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" class="icon navbar-list-btn" id="product-backlog">
+                        <div>
+                            <img src="../../assets/icons/product_backlog_1_64x64.png" style="scale: 0.5;"
+                                alt="product backlog" />
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="icon navbar-list-btn" id="sprints">
+                        <div>
+                            <img id="sprint-icon" src="../../assets/icons/sprint_1_50x50.png" style="scale: 0.65;"
+                                alt="sprints" />
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="icon navbar-list-btn" id="sprint-board">
+                        <div>
+                            <img src="../../assets/icons/sprint_board_2_50x50.png" style="scale: 0.65;"
+                                alt="sprint board" />
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="icon navbar-list-btn" id="admin-view">
+                        <div>
+                            <img src="../../assets/icons/admin_50x50.png" style="scale: 0.65;" alt="admin view" />
+                        </div>
+                    </button>
+                </li>
+            </ul>
+            <button type="button" class="icon navbar-list-btn" id="user">
+                <div>
+                    <img src="../../assets/icons/user_male_2_100x100.png" style="scale: 0.5;" alt="user" />
+                </div>
+            </button>
+        </aside>
+        <section class="main">
+
+
+
+
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- /////////////////////////////// THE ACTUAL WEBPAGE CONTENT BEGINS FROM HERE ////////////////////////////// -->
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+            <div class="page-header-row d-flex flex-row bd-highlight mb-3 justify-content-between align-items-center">
+                <div id="header_title" class="flex-column">
+                    <img src="../../assets/icons/title_sprint_board.png" class="img-fluid">
+                </div>
+                <div class="brand-text flex-column-reverse">
+                    <img src="../../assets/icons/brand_logo_1.png" class="img-fluid">
+                </div>
+            </div>
+
+
+
+
+
+            <!-- three columns, each of which can contain items in flex-column alignment -->
+
+
+            <div class="sprint-board-container">
+
+                <div class="sprint-board-col">
+                    <div class="sp-header sp-header-not-started"> Not Started </div>
+                    <div class="sp-list" id="sp-list-not-started">
+                        <!-- to make it easier to update the list of items withou dealing with a separate header -->
+                        <!-- <div class="sp-task">
+                            Task 1
+                            <div id="1" hidden> Task 1 Hidden </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="sprint-board-col">
+                    <div class="sp-header sp-header-in-progress"> In Progess </div>
+                    <div class="sp-list" id="sp-list-in-progress">
+                    </div>
+                </div>
+                <div class="sprint-board-col">
+                    <div class="sp-header sp-header-completed"> Completed </div>
+                    <div class="sp-list" id="sp-list-completed">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="button-row">
+                <div id="view-graph-btn" class="btn row-btn">
+                    <img id="view-graphs-icon" src="../../assets/icons/graphs_1_48x48.png">
+                    View Graphs
+                </div>
+                <div id="save-board-order-btn" class="btn row-btn">
+                    <img id="save-icon" src="../../assets/icons/save_64x64.png">
+                    Save
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    </div>
+
+
+
+    <!-- create a modal for each task -->
+    <div class="modal fade" id="sprint-board-task-modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sprint-board-task-modal-title">TASK NAME HERE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body container-fluid edit-task-modal-container">
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="task-name">Assigned To:</label>
+                        </div>
+                        <div class="col-8">
+                            <input name="task-name" id="task-assignee" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="task-name" class="edit-label">Session Start:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="datetime-local" id="start-task-time" name="points" value="2023-10-01T07:30">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="task-name" class="edit-label">Session End:</label>
+                        </div>
+                        <div class="col-8">
+                            <input type="datetime-local" id="end-task-time" name="points" value="2023-10-01T08:30">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="task-name" class="edit-label">Time Spent:</label>
+                        </div>
+                        <div class="col-8">
+                            <div id="time-spent"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel Edit</button>
+                    <button type="button" id="update-task-btn" class="btn btn-primary">Add Session</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="mainbox modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="graphContent modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLongTitle">Burndown Chart</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <canvas style="width: 100%; height: 100%;" id="acquisitions"></canvas>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-chart-btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </section>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="../../libs/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../libs/popper/popper.min.js"></script>
+    <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="module" src="sprint_board.js"></script>
+
+</body>
+
+</html>

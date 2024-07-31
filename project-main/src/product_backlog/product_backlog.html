@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <title>Product Backlog</title>
+    <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+    <script type="module" src="../../constants.js"></script>
+    <script type="text/javascript" src="../../navigation.js"></script>
+    <link rel="stylesheet" href="../global_style.css" />
+    <link rel="stylesheet" href="../global_fonts.css" />
+    <link rel="stylesheet" href="product_backlog.css" />
+    <link rel="stylesheet" href="product_backlog_card.css" />
+
+    <script type="module" src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/script.js"></script>
+    <link rel="stylesheet" href="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/style.css" />
+  </head>
+
+  <body>
+    <div class="side-navbar-container">
+      <aside class="sidebar">
+        <ul class="menu-list">
+          <li>
+            <div class="menu-container">
+              <button type="button" class="icon navbar-btn" id="menu">
+                <img src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/assets/images/menu.svg" alt="menu" />
+              </button>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="product-backlog">
+              <div>
+                <!-- <img src="../../assets/icons/product_backlog_1_32x32.png" alt="product backlog" /> -->
+                <img src="../../assets/icons/product_backlog_1_64x64.png" style="scale: 0.5" alt="product backlog" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="sprints">
+              <div>
+                <!-- <img id="sprint-icon" src="../../assets/icons/sprint_1_80x80.png"
+                                style="scale: 0.45; position: relative; left: 0px;" alt="sprints" /> -->
+                <img id="sprint-icon" src="../../assets/icons/sprint_1_50x50.png" style="scale: 0.65" alt="sprints" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="sprint-board">
+              <div>
+                <img src="../../assets/icons/sprint_board_2_50x50.png" style="scale: 0.65" alt="sprint board" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="admin-view">
+              <div>
+                <img src="../../assets/icons/admin_50x50.png" style="scale: 0.65" alt="admin view" />
+              </div>
+            </button>
+          </li>
+        </ul>
+        <button type="button" class="icon navbar-list-btn" id="user">
+          <div>
+            <img src="../../assets/icons/user_male_2_100x100.png" style="scale: 0.5" alt="user" />
+          </div>
+        </button>
+      </aside>
+      <section class="main">
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////// THE ACTUAL WEBPAGE CONTENT BEGINS FROM HERE ////////////////////////////// -->
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="page-header-row d-flex flex-row bd-highlight mb-3 justify-content-between align-items-center">
+          <div id="header_title" class="flex-column">
+            <img src="../../assets/icons/title_product_backlog.png" class="img-fluid" />
+          </div>
+          <div class="brand-text flex-column-reverse">
+            <img src="../../assets/icons/brand_logo_1.png" class="img-fluid" />
+          </div>
+        </div>
+
+        <div class="product-backlog-container container-fluid">
+          <div class="filter-row container-fluid align-items-center">
+            <div class="row" id="filter-text">
+              <div class="col-sm filter-label">
+                <label for="tag">Filter by tags:</label>
+              </div>
+              <div class="col-sm filter-bar">
+                <select name="tag" id="tag" class="custom-select filter-clickbar">
+                  <option value="All">All</option>
+                  <option value="UI/UX">UI/UX</option>
+                  <option value="Backend">Backend</option>
+                  <option value="Database">Database</option>
+                  <option value="Frontend">Frontend</option>
+                  <option value="Framework">Framework</option>
+                  <option value="API">API</option>
+                  <option value="Testing">Testing</option>
+                </select>
+              </div>
+              <div class="col-sm filter-remove-btn">
+                <button class="remove-btn">Remove Filter</button>
+                <div></div>
+              </div>
+              <div class="col-sm-reverse view-toggle">
+                <label class="switch">
+                  <input type="checkbox" class="checkbox" />
+                  <span class="toggle-thumb">
+                    <img id="img-card-view" src="../../assets/icons/view_cardview_60x60.png" />
+                    <img id="img-list-view" src="../../assets/icons/view_listview_2_64x64.png" />
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="jiraffe-table" class="justify-content-center">
+            <div class="product-backlog-div">
+              <table id="product-backlog-table" class="container-fluid">
+                <div class="loading-icon-div">
+                  <div class="load"></div>
+                  <div class="load-text">We're loading your tasks...</div>
+                </div>
+                <!-- <div class="row jiraffe-table-header-row">
+                                <div class="col-2 jiraffe-table-header-col"> Name </div>
+                                <div class="col-1 jiraffe-table-header-col"> Tag</div>
+                                <div class="col-1 jiraffe-table-header-col"> Urgent Status</div>
+                                <div class="col-1 jiraffe-table-header-col assignee-header-col"> Assigned To</div>
+                                <div class="col-1 jiraffe-table-header-col"> Story Points</div>
+                                <div class="col-sm jiraffe-table-header-col "> Description</div>
+                                <div class="col-1 jiraffe-table-header-col"> Edit</div>
+                                <div class="col-1 jiraffe-table-header-col delete-header-col"> Delete</div>
+                            </div>
+                            
+                            <div class="row jiraffe-table-row">
+                                <div class="col-2 jiraffe-table-col"> Name </div>
+                                <div class="col-1 jiraffe-table-col"> Tag</div>
+                                <div class="col-1 jiraffe-table-col">
+                                    <div class="badge badge-light chip-urgent-tag"> Urgent </div>
+                                </div>
+                                <div class="col-1 jiraffe-table-col assignee-col">
+                                    <div class="badge chip-name-tag" data-toggle="popover" data-placement="right"
+                                        data-trigger="hover" data-content="Lahiru Weliwitiya"> L </div>
+                                </div>
+                                <div class="col-1 jiraffe-table-col"> Story Points</div>
+                                <div class="col-sm jiraffe-table-col"> Description</div>
+                                <div class="col-1 jiraffe-table-col btn">
+                                    <img class="edit-icon" src="../../assets/icons/edit_64x64.png">
+                                </div>
+                                <div class="col-1 jiraffe-table-col delete-col btn">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </div>
+                            </div> -->
+              </table>
+            </div>
+          </div>
+
+          <!-- ADD CARD VIEW UI HERE -->
+
+          <div id="add-task-btn" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Add a new task">
+            <a href="../add_task/add_task.html">
+              <img id="add-task-icon" src="../../assets/icons/add_50x50.png" />
+            </a>
+          </div>
+
+          <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+          <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        </div>
+
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete this task?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="delete-btn" class="btn btn-primary">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="add-task-btn" data-toggle="popover" data-placement="left" data-trigger="hover"
+            data-content="Add a new task">
+            <a href="../add_task/add_task.html">
+            <img id="add-task-icon" src="../../assets/icons/add_50x50.png">
+            </a>
+        </div>
+
+        </section>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="../../libs/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../libs/popper/popper.min.js"></script>
+    <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="module" src="product_backlog.js"></script>
+  </body>
+</html>

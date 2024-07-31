@@ -1,0 +1,44 @@
+
+
+/* /////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////// */
+/* //////////////////// CARD LAYOUT VIEW STYLES ////////////////// */
+
+.row-entry{
+    animation: fadeIn 0.75s ease-in-out; 
+    display: flex; 
+    flex-direction: row; ;
+    justify-content: space-evenly;
+    gap:5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.entry-title{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.card{
+    width: 32%;
+    border-radius: 20px;
+}
+
+.card-body{
+    overflow: hidden;
+    padding-bottom: 0%;
+}
+
+
+.card-urgency{
+    position:relative;
+    float: right;
+    
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////// */

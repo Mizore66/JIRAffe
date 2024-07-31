@@ -1,0 +1,338 @@
+body {
+    overflow-y: scroll;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.form-control:hover {
+    box-shadow: 0px 0px 30px 0.3px #000000;
+    border: none;
+}
+
+.form-control::selection {
+    border: none;
+}
+
+
+
+.edit-label-div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    margin-bottom: 1%;
+}
+
+.edit-label {
+    font-family: "Barlow-Medium";
+    font-size: 18px;
+}
+
+.page-header-row {
+    padding-top: 1.5%;
+}
+
+.edit-form-container {
+    padding-top: 1%;
+    padding-bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-row {
+    display: flex;
+    justify-content: center;
+    /* align-items: baseline; */
+    padding-top: 5px;
+    padding-bottom: 0.65%;
+    margin-left: -7%;
+    margin-bottom: 0.7%;
+    /* background-color: #ff6c6c;    */
+}
+
+.input-urgency-row {
+    margin-bottom: 0px;
+}
+
+#description {
+    height: 50px;
+    resize: none;
+}
+
+
+/* .submit-btn{
+    padding: 0.5%;
+} */
+
+
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////// DROPDOWN ARROW MOD //////////////////// */
+
+/* Taken from: https://stackoverflow.com/questions/14218307/select-arrow-style-change#:~:text=/*%20FIX%20OF%20UGLY,!important%3B%0A%7D */
+
+SELECT {
+    background: url("data:image/svg+xml,<svg height='20px' width='20px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    padding-right: 2rem !important;
+}
+
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ///////////////////// STORY POINTS SLIDER //////////////////// */
+
+/* Taken from: https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+
+#story_points {
+    width: 100%;
+}
+
+/* The slider itself */
+.slider {
+    border-radius: 20px;
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #ffffff;
+    outline: none;
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #8822aa;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 20px;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #8822aa;
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider-value-text {
+    font-family: "Barlow-Regular";
+    font-size: 90%;
+}
+
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+
+
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-primary.dropdown-toggle{
+    color: #ffffff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+.chip-urgent-tag {
+    background-color: #FF0000;
+    width: 190px;
+    color: #ffffff;
+    border-radius: 25px;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+}
+.btn-outline-urgent:hover {
+    border-color: #FF0000;
+    color: #FF0000;
+    background-color: transparent;
+}
+.btn-outline-urgent:hover .chip-urgent-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.1px #FF0000;
+}
+.active .chip-urgent-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.1px #FF0000;
+}
+.btn-outline-urgent:disabled {
+    border: 0px;
+    background-color: #FF0000;
+}
+.btn-outline-urgent:not(:disabled) {
+    border-color: transparent;
+    color: #FF0000;
+    background-color: transparent;
+}
+
+
+
+.chip-important-tag {
+    background-color: #FF6B00;
+    width: 190px;
+    color: #ffffff;
+    border-radius: 25px;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+.btn-outline-important:hover {
+    border-color: #FF6B00;
+    color: #FF6B00;
+    background-color: transparent;
+}
+.btn-outline-important:hover .chip-important-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #FF6B00;
+}
+.active .chip-important-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #FF6B00;
+}
+.btn-outline-important:disabled {
+    border: 0px;
+    background-color: #FF6B00;
+}
+.btn-outline-important:not(:disabled) {
+    border-color: transparent;
+    color: #FF6B00;
+    background-color: transparent;
+}
+
+
+
+.chip-medium-tag {
+    background-color: #E7D000;
+    width: 190px;
+    color: #ffffff;
+    border-radius: 25px;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+.btn-outline-medium:hover {
+    border-color: #E7D000;
+    color: #E7D000;
+    background-color: transparent;
+}
+
+.btn-outline-medium:hover .chip-medium-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #E7D000;
+}
+.active .chip-medium-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #E7D000;
+}
+.btn-outline-medium:disabled {
+    border: 0px;
+    background-color: #E7D000;
+}
+
+.btn-outline-medium:not(:disabled) {
+    border-color: transparent;
+    color: #E7D000;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+.chip-low-tag {
+    background-color: #0D9F00;
+    width: 190px;
+    color: #ffffff;
+    border-radius: 25px;
+    align-items: center;
+    font-size: 15px;
+    padding: 8px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+.btn-outline-low:hover {
+    border-color: #0D9F00;
+    color: #0D9F00;
+    background-color: transparent;
+}
+.btn-outline-low:hover .chip-low-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #0D9F00;
+}
+.active .chip-low-tag {
+    opacity: 1.0;
+    box-shadow: 0px 0px 30px 0.3px #0D9F00;
+}
+.btn-outline-low:disabled {
+    border: 0px;
+    opacity: 0.5;
+    background-color: #0D9F00;
+}
+.btn-outline-low:not(:disabled) {
+    border-color: transparent;
+    color: #0D9F00;
+    background-color: transparent;
+    opacity: 1.0;
+}
+
+
+
+.chip-name-tag {
+    background-color: #ad00ff;
+    width: 35px;
+    height: 35px;
+    color: #ffffff;
+    border-radius: 100%;
+    overflow: hidden;
+    font-size: 15px;
+    padding: 8px;
+    display: grid;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.urgency-checkbox {
+    cursor: pointer;
+}

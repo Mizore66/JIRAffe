@@ -1,0 +1,210 @@
+
+/* @media (min-width: 992px) {} */
+
+/* This file contains all the style elements used globally */
+
+#header_title {
+    position: relative;
+    /* padding-left: 6%; */
+    /* position: absolute; */
+    padding-left: 90px;
+    scale: 1.8;
+}
+
+.brand-text {
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 1.5%;
+    right: 10px;
+    visibility: visible;
+    scale: 0.9;
+}
+
+body {
+    background-color: #E4A0B7;
+    height: 100vh;
+    width: 100vw;
+    overflow: overlay;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* ////////////////////////////////////////// SCROLLBAR STYLES //////////////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+/* width */
+::-webkit-scrollbar {
+    background: transparent;
+    width: 2.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #E4A0B7;
+}
+
+/* To play with the length of the scrollbar */
+*::-webkit-scrollbar-button {
+    /* display: none; */
+    height: 1.2%;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #262626;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    z-index: 0;
+    background: #555;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+.popover-body{
+    overflow: hidden;
+    padding: .5rem .75rem;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+}
+
+.container {
+    padding-top: 150px;
+    padding-left: 105px;
+}
+
+#navigation-bar {
+    position: fixed;
+    left: -20px;
+    width: 95px;
+    height: 100vh;
+    background-color: #F5DCE0;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+#male-nav-icon {
+    position: fixed;
+    left: 10px;
+    cursor: pointer;
+    height: 50px;
+    bottom: 1vh;
+}
+
+
+#nav-menu-icon {
+    position: fixed;
+    left: 15px;
+    cursor: pointer;
+    height: 20px;
+    top: calc(2vh + 10px);
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+.img-fluid {
+    position: relative;
+    height: calc(20px + 1vw + 1vh);
+}
+
+
+
+.filter-title {
+    font-family: "Baloo2-Medium";
+}
+
+.clickable-image {
+    position: relative;
+    height: calc(20px + 1vw + 1vh);
+    cursor: pointer;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* /////////////////////////////////// LOADING-CIRCLE INDICATOR STYLES //////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+/* Taken from: https://codepen.io/jake-lee/pen/jrJYON */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(360deg);
+    }
+}
+
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.load {
+    width: 100px;
+	height: 100px;
+	margin: 110px auto 0;
+	border:solid 10px #8822aa;
+	border-radius: 50%;
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+    -webkit-transition: all 0.5s ease-in;
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         1.0s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+    
+    transition: all 0.5s ease-in;
+    animation-name:             rotate; 
+    animation-duration:         1.0s; 
+    animation-iteration-count:  infinite;
+    animation-timing-function: linear; 
+}
+
+.loading-icon-div {
+    padding-top: 6%;
+    display: flex;  
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.load-text{
+    font-family: "Baloo2-Medium";
+    padding-top: 10px;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

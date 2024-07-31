@@ -1,0 +1,159 @@
+ul {
+    /* Remove default padding enforced by user agent stylesheet */
+    padding: 0;
+    /* overflow-y: scroll; */
+}
+
+.page-header-row {
+    padding-top: 1.5%;
+}
+
+
+#header_title {
+    left: 0.5px;
+    scale: 1.4;
+}
+
+.main{
+    height: 100%;
+}
+
+.sprint-board-container {
+    padding-top: 1%;
+    padding-left: 20px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+    height: 80%;
+    padding-bottom: 20px;
+    /* background-color: #0d9f00; */
+}
+
+.sprint-board-col {
+    /* overflow-y: scroll; */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    width: 28%;
+    height: auto;
+    background-color: #ECBDC4;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 15px 0.1px #000000;
+}
+
+
+
+.sp-header {
+    font-family: 'Barlow-Medium';
+    font-size: 18px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.sp-header-not-started {
+    color: white;
+    background-color: #ff4848;
+}
+
+.sp-header-in-progress {
+    background-color: #ffe81b;
+}
+
+.sp-header-completed {
+    color: white;
+    background-color: #0d9f00;
+}
+
+
+.sp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 90%;
+}
+
+.sp-list-not-started {
+    height: 100%;
+}
+
+.sp-list-in-progress {
+    height: 100%;
+}
+
+.sp-list-completed {
+    height: 100%;
+}
+
+.sp-task {
+    cursor: pointer;
+    font-family: 'Barlow-Regular';
+    border-radius: 10px;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.button-row{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Baloo2-Bold';
+}
+
+.row-btn{
+    width: 200px;
+    background-color: #efcfd4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    height: 55px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+#view-graphs-icon{
+    scale: 0.75;
+}
+
+#save-icon{
+    scale: 0.5;
+    padding-left: 0%;
+}
+
+#sprint-board-task-modal-title{
+    font-family: 'Baloo2-ExtraBold';
+    font-size: 30px;
+}
+
+#sprint-board-task-modal{
+    font-family: 'Barlow-Regular';
+}
+
+.edit-task-modal-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

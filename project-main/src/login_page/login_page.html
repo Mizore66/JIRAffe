@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css" />
+  <!-- Bootstrap CSS -->
+  <title>Log In</title>
+  <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+  <script type="module" src="../../constants.js"></script>
+  <script type="text/javascript" src="../../navigation.js"></script>
+  <link rel="stylesheet" href="../global_style.css" />
+  <link rel="stylesheet" href="../global_fonts.css" />
+  <link rel="stylesheet" href="login_page.css" />
+</head>
+
+<body>
+
+  <div class="page-content row">
+    <div class="page-content-col quote-container-col col-7">
+      <img id="login-background" src="../../assets/images/login_background_3.png" style="z-index: 0;">
+      <div class="animation-space" id="animation-space">
+      </div>
+      <div class="author-text" id="author-text">
+        <!-- insert an authors name in "~ <ITALIC TEXT>" (if there is one) -->
+      </div>
+    </div>
+
+    <div class="page-content-col input-section-col col-5">
+      <img src="../../assets/icons/brand_logo_1.png" class="img-fluid">
+      <img src="../../assets/icons/user_male_100x100.png" class="user-image" alt="user">
+      <p class="login-text">Log into your account</p>
+      <div class="input-section">
+        <input type="text" class="form-control inputField" id="login_name" placeholder="Enter your Name...">
+      </div>
+      <div class="input-section">
+        <input type="password" class="form-control inputField" id="login_password" placeholder="Enter your password...">
+      </div>
+      <div class="input-section" id="forgot-password-email" hidden>
+        <input type="text" class="form-control inputField" id="login_email" placeholder="Enter your Email...">
+      </div>
+      <div class="forgot-passowrd">
+        <a id="forgot-password-btn" href="#">Forgot Password?</a>
+      </div>
+      <div class="form-group btn" id="login-btn"> Log In </div>
+    </div>    
+  </div>
+
+  <div class="allModals modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="mainbox modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title font-weight-bold" id="exampleModalLongTitle">Reset your password</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="register-member-form">
+            <div class="form-group row">
+              <label for="MemberEmail" class="col-sm-2 col-form-label font-weight-bold">Email:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="MemberEmail" placeholder="Enter email" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="add-member-footer modal-footer">
+          <button type="button" class="register-member btn font-weight-bold" data-dismiss="modal" id="reset-btn">Reset</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../libs/popper/popper.min.js"></script>
+  <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+  <script type="module" src="login_page.js"></script>
+  <script type="text/javascript" src="animate_text.js"></script>
+</body>
+
+</html>

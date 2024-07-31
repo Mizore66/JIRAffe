@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <title>Product Backlog</title>
+    <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+    <script type="module" src="../../constants.js"></script>
+    <script type="text/javascript" src="../../navigation.js"></script>
+    <link rel="stylesheet" href="../global_style.css">
+    <link rel="stylesheet" href="../global_fonts.css">
+    <link rel="stylesheet" href="product_backlog_card.css">
+
+</head>
+
+<body>
+
+
+
+
+    <div class="page-header-row d-flex flex-row bd-highlight mb-3 justify-content-between align-items-center">
+
+        <div id="header_title" class="flex-column">
+            <img src="../../assets/icons/title_product_backlog.png" class="img-fluid">
+        </div>
+
+        <div class="brand-text flex-column-reverse">
+            <img src="../../assets/icons/brand_logo_1.png" class="img-fluid">
+        </div>
+    </div>
+
+
+
+
+    <div class="product-backlog-container container-fluid">
+
+        <div class="filter-row container-fluid align-items-center">
+
+            <div class="row" id="filter-text">
+
+                <div class="col-sm filter-label">
+                    <label for="tag">Filter by tags:</label>
+                </div>
+
+                <div class="col-sm filter-bar">
+                    <select name="tag" id="tag" class="custom-select filter-clickbar">
+                        <option value="All">All</option>
+                        <option value="UI/UX">UI/UX</option>
+                        <option value="Backend">Backend</option>
+                        <option value="Database">Database</option>
+                        <option value="Frontend">Frontend</option>
+                        <option value="Framework">Framework</option>
+                        <option value="API">API</option>
+                        <option value="Testing">Testing</option>
+                    </select>
+                </div>
+
+                <div class="col-sm filter-remove-btn">
+                    <button class="remove-btn">Remove Filter</button>
+                    <div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-reverse view-toggle">
+
+                    <label class="switch">
+                        <input type="checkbox" class="checkbox">
+                        <span class="toggle-thumb">
+                            <img id="img-card-view" src="../../assets/icons/view_cardview_60x60.png">
+                            <img id="img-list-view" src="../../assets/icons/view_listview_2_64x64.png">
+                        </span>
+                    </label>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <!-- <div class="badge chip-name-tag"> L </div> -->
+
+
+        <div id="jiraffe-table" class="justify-content-center ">
+
+            <div class="product-backlog-div">
+
+                <table id="product-backlog-table" class="container-fluid">
+                    <div class="row-entry" id="row-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Chean Tay Hao" style="background-color:#b30076" data-original-title="" title="">
+                                        C
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-medium-tag">Medium</div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Chean Hao</h6> 
+                                <p class="card-text">Boom</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Lahiru Weliwitiya" style="background-color:#ff1f00" data-original-title="" title="">
+                                            L
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-important-tag">Important</div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Lahiru</h6> 
+                                <p class="card-text">Boom Boom Boom Boom Boom Boom Boom Boom</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Anas Qumhiyeh" style="background-color:#ad00ff" data-original-title="" title="">
+                                            A
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-urgent-tag"> Urgent </div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Anas</h6> 
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+
+                        </div> 
+                        
+                    </div>
+
+                    <div class="row-entry" id="row-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Howard Zhi Hao" style="background-color:#4800e3" data-original-title="" title="">
+                                            H
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-low-tag">Low</div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Howard</h6> 
+                                <p class="card-text">Boom</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Zhen Ni Ong" style="background-color:#e4da00" data-original-title="" title="">
+                                            Z
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-important-tag">Important</div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Zhen Ni</h6> 
+                                <p class="card-text">Boom Boom Boom Boom Boom Boom Boom Boom</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="entry-title">
+                                    <div class="card-title">
+                                        <div class="badge chip-name-tag" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Zimeng Yan" style="background-color:#780a0a" data-original-title="" title="">
+                                            G
+                                        </div>
+                                    </div>
+                                    <div class="card-urgency">
+                                        <h4><div class="badge badge-light chip-urgent-tag"> Urgent </div></h4>
+                                    </div>
+                                </div>
+                                <h6 class="card-subtitle mb-2 font-weight-bold">Gina</h6> 
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <button type="button" class="col-1 jiraffe-table-col delete-col btn float-right">
+                                    <img class="delete-icon" src="../../assets/icons/delete_48x48.png">
+                                </button>
+                            </div>
+
+                        </div> 
+                        
+                    </div>
+
+                    
+                    
+
+                    
+                        
+                    
+                    
+                    
+
+
+                    <!-- <div class="loading-icon-div">
+                        <div class="load"></div>
+                        <div class="load-text">We're loading your tasks...</div>
+                    </div> -->
+
+      
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <!-- ADD CARD VIEW UI HERE -->
+
+
+
+
+
+
+
+        <div id="add-task-btn" data-toggle="popover" data-placement="left" data-trigger="hover"
+            data-content="Add a new task">
+            <a href="../add_task/add_task.html">
+            <img id="add-task-icon" src="../../assets/icons/add_50x50.png">
+            </a>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this task?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="delete-btn" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="../../libs/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../libs/popper/popper.min.js"></script>
+    <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="module" src="product_backlog_card.js"></script>
+</body>
+
+</html>

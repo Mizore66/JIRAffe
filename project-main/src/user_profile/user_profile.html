@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <title>Team Dashboard</title>
+    <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+    <script type="module" src="../../constants.js"></script>
+    <script type="text/javascript" src="../../navigation.js"></script>
+    <link rel="stylesheet" href="../global_style.css" />
+    <link rel="stylesheet" href="../global_fonts.css" />
+    <link rel="stylesheet" href="../team_dashboard/team_dashboard.css" />
+    <link rel="stylesheet" href="../add_task/add_task.css" />
+    <link rel="stylesheet" href="../user_profile/user_profile.css" />
+
+    <script type="module" src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/script.js"></script>
+    <link rel="stylesheet" href="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/style.css" />
+    <script type="module" src="../../libs/chartJS/chart.umd.min.js"></script>
+  </head>
+
+  <body>
+    <div class="side-navbar-container">
+      <aside class="sidebar">
+        <ul class="menu-list">
+          <li>
+            <div class="menu-container">
+              <button type="button" class="icon navbar-btn" id="menu">
+                <img src="../../libs/expanding-sidebar-navigation/expanding-sidebar-navigation/assets/images/menu.svg" alt="menu" />
+              </button>
+            </div>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="product-backlog">
+              <div>
+                <!-- <img src="../../assets/icons/product_backlog_1_32x32.png" alt="product backlog" /> -->
+                <img src="../../assets/icons/product_backlog_1_64x64.png" style="scale: 0.5" alt="product backlog" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="sprints">
+              <div>
+                <!-- <img id="sprint-icon" src="../../assets/icons/sprint_1_80x80.png"
+                                style="scale: 0.45; position: relative; left: 0px;" alt="sprints" /> -->
+                <img id="sprint-icon" src="../../assets/icons/sprint_1_50x50.png" style="scale: 0.65" alt="sprints" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="sprint-board">
+              <div>
+                <img src="../../assets/icons/sprint_board_2_50x50.png" style="scale: 0.65" alt="sprint board" />
+              </div>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="icon navbar-list-btn" id="admin-view">
+              <div>
+                <img src="../../assets/icons/admin_50x50.png" style="scale: 0.65" alt="admin view" />
+              </div>
+            </button>
+          </li>
+        </ul>
+        <button type="button" class="icon navbar-list-btn" id="user">
+          <div>
+            <img src="../../assets/icons/user_male_2_100x100.png" style="scale: 0.5" alt="user" />
+          </div>
+        </button>
+      </aside>
+      <section class="main">
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- /////////////////////////////// THE ACTUAL WEBPAGE CONTENT BEGINS FROM HERE ////////////////////////////// -->
+        <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="page-header-row d-flex flex-row bd-highlight mb-3 justify-content-between align-items-center">
+          <div id="header_title" class="flex-column">
+            <img src="../../assets/icons/title_user_profile.png" class="img-fluid" />
+          </div>
+          <div class="brand-text flex-column-reverse">
+            <img src="../../assets/icons/brand_logo_1.png" class="img-fluid" />
+          </div>
+        </div>
+
+        <div class="edit-form-container container-fluid">
+
+            <div class="text-center">
+                <h2 class="quote">The most difficult decision is the decision to act, the rest is merely tenacity. - Amelia Earhart</h2>
+            </div>
+
+
+            <!-- <form action="../product_backlog/product_backlog.html" method="post"> -->
+            <form action="" method="post">
+    
+    
+                <div class="row input-row">
+                    <div class="col-2 edit-label-div">
+                        <label for="first_name" class="edit-label">First Name:</label>
+                    </div>
+                    <div class="col-8">
+                        <input name="description" id="first_name" class="form-control" readonly></textarea>
+                    </div>
+    
+                </div>
+
+                <div class="row input-row">
+                    <div class="col-2 edit-label-div">
+                        <label for="last_name" class="edit-label">Last Name:</label>
+                    </div>
+                    <div class="col-8">
+                        <input name="description" id="last_name" class="form-control" readonly></textarea>
+                    </div>
+    
+                </div>
+    
+                <div class="row input-row">
+                    <div class="col-2  edit-label-div">
+                        <label for="email" class="edit-label">Email:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="email" id="email" class="form-control" readonly>
+                    </div>
+                </div>    
+
+                <div class="row input-row">
+                    <div class="col-2  edit-label-div">
+                        <label for="password" class="edit-label">Password:</label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" name="password" id="password" class="form-control">
+                    </div>
+                </div>    
+            </form>
+            
+            
+            <div class="form-group">
+    
+                <div class="text-center">
+                    <button id="update-btn" type="button" class="btn submit-btn">Update</button>
+                </div>
+    
+            </div>
+
+            <div class="form-group">
+                <div class="text-center">
+                    <a class="donate-link" href="https://www.worldvision.com.my/en/sponsor-a-child/sponsor-1000-girls?mc=15472&gad=1&gclid=Cj0KCQjw4bipBhCyARIsAFsieCwtllZhIZwr-BqSj8_q_yn7GLYEpStadDABwizsooxZcoCxq4ZFl9IaAgBUEALw_wcB">Donate to help fund the education and future of the women youth </a>
+                </div>
+            </div>
+
+        <!-- ADD CARD VIEW UI HERE -->
+
+        <!-- <div id="add-task-btn" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Add a new task">
+          <a href="../add_task/add_task.html">
+            <img id="add-task-icon" src="../../assets/icons/add_50x50.png" />
+          </a>
+        </div> -->
+      </section>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="../../libs/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../libs/popper/popper.min.js"></script>
+    <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="module" src="user_profile.js"></script>
+  </body>
+</html>

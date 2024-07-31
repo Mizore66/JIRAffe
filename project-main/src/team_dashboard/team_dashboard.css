@@ -1,0 +1,509 @@
+/* Styles that are unique to the UI elements in the product backlog page */
+
+ul {
+  /* Remove default padding enforced by user agent stylesheet */
+  padding: 0;
+}
+
+.page-header-row {
+  padding-top: 1.5%;
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+/* /////////////////// FILTER DROPDOWN STYLES ////////////////// */
+
+.filter-row {
+  padding-bottom: 0.8%;
+  justify-content: center;
+}
+
+.filter-label {
+  max-width: fit-content;
+  align-self: center;
+  /* display: contents; */
+  padding-right: 0%;
+}
+
+.filter-bar {
+  display: table-column;
+  max-width: 20%;
+  align-items: start;
+  padding: 0%;
+  margin: 0%;
+}
+
+.custom-select {
+  border-radius: 20px;
+  scale: 0.8;
+  background-color: #ffffff;
+  border-color: #d9d9d9;
+}
+
+.filter-remove-btn {
+  align-self: center;
+  padding-left: 0px;
+}
+
+.remove-btn {
+  font-family: "Barlow-Regular";
+  /* border-radius: 10%; */
+  border: 0.5px;
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////// ICON TOGGLE OPTION //////////////////// */
+
+/* Taken from: https://dev.to/devggaurav/let-s-create-a-custom-toggle-switch-using-html-and-css-33df */
+
+.view-toggle {
+  margin-right: 10px;
+  align-self: center;
+  justify-content: center;
+}
+
+.switch {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+}
+
+.toggle-thumb {
+  display: flex;
+  position: absolute;
+  right: 31px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: -1;
+  height: 30px;
+}
+
+.toggle-thumb:before {
+  content: "";
+  height: 24px;
+  width: 40px;
+  position: absolute;
+  left: 7px;
+  bottom: 3px;
+  border-radius: 20px;
+  background-color: #545454;
+  transition: 0.4s all ease;
+  z-index: 1;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked + .toggle-thumb:before {
+  /* transform: translateX(26px); */
+  transform: translateX(69px);
+}
+
+#img-card-view {
+  /* scale: 0.6; */
+  scale: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#img-list-view {
+  scale: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.product-backlog-container {
+  padding-left: 2%;
+  padding-right: 1.5%;
+  padding-right: 2.8%;
+  height: 78%;
+}
+
+#jiraffe-table {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 15px 0.1px #000000;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #ecbdc4;
+}
+
+#jiraffe-table::-webkit-scrollbar-track {
+  position: absolute;
+  right: -3rem;
+  top: -50rem;
+  background: transparent;
+}
+
+#jiraffe-table::-webkit-scrollbar-thumb {
+  position: absolute;
+}
+
+.product-backlog-div {
+  display: block;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  margin: 0%;
+}
+
+.jiraffe-table-header-row {
+  animation: fadeIn 0.5s normal; /* -------------------------- */
+  display: -webkit-box;
+  position: sticky;
+  z-index: 1;
+  top: 1;
+  font-family: "Barlow-Medium";
+  font-size: large;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.jiraffe-table-header-col {
+  display: flex;
+  justify-content: center;
+  background-color: #bcbcbc;
+  margin-left: 0.8px;
+  margin-right: 0.8px;
+  padding: 8px;
+  padding-left: 8px;
+}
+
+.jiraffe-table-row {
+  animation: fadeIn 0.75s ease-in; /* -------------------------- */
+  font-family: "Barlow-Regular";
+  font-size: 15px;
+  text-align: center;
+}
+
+.jiraffe-table-row-empty {
+  font-family: "Barlow-Regular";
+  font-size: 15px;
+  text-align: center;
+}
+
+.jiraffe-table-col {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin: 0.8px;
+  padding: 15px;
+  /* padding-left: 50px; */
+  overflow: hidden;
+  font-size: large;
+  cursor: pointer;
+}
+
+.jiraffe-table-col-empty {
+  display: grid;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin: 0.8px;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.chip-urgent-tag {
+  background-color: #ff0000;
+  width: 95px;
+  color: #ffffff;
+  border-radius: 25px;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.chip-important-tag {
+  background-color: #ff6b00;
+  width: 95px;
+  color: #ffffff;
+  border-radius: 25px;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.chip-medium-tag {
+  background-color: #e7d000;
+  width: 95px;
+  color: #ffffff;
+  border-radius: 25px;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.chip-low-tag {
+  background-color: #0d9f00;
+  width: 95px;
+  color: #ffffff;
+  border-radius: 25px;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.chip-name-tag {
+  background-color: #ad00ff;
+  width: 35px;
+  height: 35px;
+  color: #ffffff;
+  border-radius: 100%;
+  overflow: hidden;
+  font-size: 15px;
+  padding: 8px;
+  display: grid;
+  align-items: center;
+}
+
+#add-task-btn {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: #e18aaa;
+  font-family: "Baloo2-ExtraBold";
+  /* font-size: calc(10px + 1vw); */
+  /* text-align: center; */
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  box-shadow: 0px 0px 6px 0.5px #000000;
+}
+
+#add-task-icon {
+  position: relative;
+  height: calc(25px + 1vw);
+  /* scale: 0.7; */
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+/* ////////////////// SCREEN RESIZING OPTIONS ////////////////// */
+
+@media screen and (max-width: 1000px) {
+  /* .brand-text {
+        visibility: hidden;
+    } */
+
+  #jiraffe-table {
+    /* visibility: hidden; */
+    /* overflow: scroll; */
+    resize: none;
+  }
+}
+
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////// */
+
+.edit-icon {
+  scale: 0.4;
+}
+
+/* .edit-header-col{
+}
+
+.edit-col{
+} */
+
+.delete-header-col {
+  text-align: center;
+  margin-right: 3px;
+}
+
+#add-member{
+  scale: 0.6;
+}
+
+.delete-icon {
+  scale: 0.6;
+}
+
+.delete-col {
+  justify-content: center;
+  margin-right: 3px;
+}
+
+#jiraffe-table {
+  margin-top: 25px;
+}
+
+#view-graph-btn {
+  background-color: #ecbdc4;
+  margin-top: 10px;
+  padding: 9px;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: inline-block;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0.1px #c0bdbd;
+  cursor: pointer;
+}
+#view-graph {
+  height: 20px;
+}
+
+.align{
+  align-items: center
+}
+
+#add-member-btn {
+  background-color: #ecbdc4;
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0.1px #000000;
+  cursor: pointer;
+}
+
+.date-range{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-range-item{
+  scale: 0.8;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 2% 0px 2.8%;
+}
+
+.graphContent {
+  width: 100%;
+  height: 100%;
+}
+
+.mainbox {
+  justify-content: center;
+}
+
+input[type="date"] {
+  text-transform: uppercase;
+  width: 200px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url("../../assets/icons/calendar_1_24x24.png") no-repeat;
+  background-size: cover;
+  font-size: 30px;
+}
+
+.modal-header {
+  border-bottom: none; /* This removes the border between the header and body */
+  padding-top: 20xpx;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-content {
+  border-radius: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.register-member {
+  background-color: #efcfd4;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 0.1px #c0bdbd;
+}
+
+.hours-graph{
+  width: 100%;
+  height: 100%;
+}
+
+.add-member-footer,
+.member-info-footer,
+.sort-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 35px;
+}
+
+/* .modal {
+  opacity: 0;
+} */
+.modal-backdrop {
+  background-color: transparent !important;
+  backdrop-filter: blur(3px);
+}
+
+#header_title {
+  margin-left: 10px;
+}
+.member-name,
+.sample-password,
+.sample-working-hours {
+  font-size: 20px;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.member-name {
+  border: 1px solid #ced4da;
+}
+
+.member-modal-btns {
+  display: flex;
+  gap: 30px;
+}
+
+.sorting-btns {
+  font-size: 14px;
+}
+
+.hours-row {
+  margin-top: 30px;
+}
+
+.label-text {
+  font-size: 20px;
+}
+
+.allModals {
+  font-family: "Barlow-Regular";
+}

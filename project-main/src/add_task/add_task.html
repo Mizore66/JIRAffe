@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../libs/bootstrap-4/css/bootstrap.min.css"> <!-- Bootstrap CSS -->
+    <title>Product Backlog</title>
+    <script type="text/javascript" src="../../libs/jQuery/ajax.aspnetcdn.com_ajax_jQuery_jquery-3.7.1.js"></script>
+    <script type="module" src="../../constants.js"></script>
+    <script type="text/javascript" src="../../navigation.js"></script>
+    <link rel="stylesheet" href="../global_style.css">
+    <link rel="stylesheet" href="../global_fonts.css">
+    <link rel="stylesheet" href="add_task.css">
+</head>
+
+<!-- <body class="add-task-page"> -->
+
+<body>
+
+
+    <div class="page-header-row d-flex flex-row bd-highlight mb-3 justify-content-between align-items-center">
+
+        <div id="header_title" class="flex-column">
+            <img src="../../assets/icons/title_add_task.png" class="img-fluid">
+        </div>
+
+        <div class="brand-text flex-column-reverse">
+            <img src="../../assets/icons/brand_logo_1.png" class="img-fluid">
+        </div>
+    </div>
+
+
+
+    <div class="edit-form-container container-fluid">
+
+
+        <!-- <form action="../product_backlog/product_backlog.html" method="post"> -->
+        <form action="" method="post">
+
+
+            <div class="row input-row">
+                <div class="col-2 edit-label-div">
+                    <label for="name" class="edit-label">Name of Task:</label>
+                </div>
+                <div class="col-8">
+                    <input name="description" id="name" class="form-control"></textarea>
+                </div>
+
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="name" class="edit-label">Tag:</label>
+                </div>
+                <div class="col-8">
+                    <select name="tag" id="tag" class="form-control">
+                        <option value="UI/UX">UI/UX </option>
+                        <option value="Backend">Backend </option>
+                        <option value="Database">Database </option>
+                        <option value="Frontend">Frontend </option>
+                        <option value="Framework">Framework </option>
+                        <option value="API">API</option>
+                        <option value="Testing">Testing</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row input-row input-urgency-row">
+                <div class="col-2  edit-label-div">
+                    <label for="btn-check" class="edit-label">Urgent Status:</label>
+                </div>
+
+                <!-- <div class="row col-8 px-8 justify-content-between"> -->
+
+
+
+                    <div class="row col-8 px-8 justify-content-between btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check" id="btn-low" autocomplete="off" hidden>
+                        <!-- <input type="checkbox" class="btn-check" id="btn-low" autocomplete="off"> -->
+                        <label class="btn btn-outline-primary btn-outline-low" for="btn-low">
+                            <div class="badge badge-light chip-low-tag">Low</div>
+                            <div id="value-low" hidden>1</div>
+                        </label>
+                        
+                        <input type="checkbox" class="btn-check" id="btn-medium" autocomplete="off" hidden>
+                        <!-- <input type="checkbox" class="btn-check" id="btn-medium" autocomplete="off"> -->
+                        <label class="btn btn-outline-primary btn-outline-medium" for="btn-medium">
+                            <div class="badge badge-light chip-medium-tag">Medium</div>
+                            <div id="value-medium" hidden>2</div>
+                        </label>
+                        
+                        <input type="checkbox" class="btn-check" id="btn-important" autocomplete="off" hidden>
+                        <!-- <input type="checkbox" class="btn-check" id="btn-important" autocomplete="off"> -->
+                        <label class="btn btn-outline-primary btn-outline-important" for="btn-important">
+                            <div class="badge badge-light chip-important-tag">Important</div>
+                            <div id="value-important" hidden>3</div>
+                        </label>
+                        
+                        <input type="checkbox" class="btn-check" id="btn-urgent" autocomplete="off" hidden>
+                        <!-- <input type="checkbox" class="btn-check" id="btn-urgent" autocomplete="off"> -->
+                        <label class="btn btn-outline-primary btn-outline-urgent" for="btn-urgent">
+                            <div class="badge badge-light chip-urgent-tag"> Urgent </div>
+                            <div id="value-urgent" hidden>4</div>
+                        </label>
+                    </div>
+
+
+                    <!-- make sure that only one option is selected at a time -->
+
+                    <script>
+                        const labels = document.querySelectorAll(".btn-outline-primary");
+                        const inputs = document.querySelectorAll(".btn-check");
+                        $(".btn-outline-primary").click(function () {
+                            const currentInputID = this.attributes.for["nodeValue"];  // get the id of the current input checkbox
+                            this.classList.toggle("active");    // toggle the "active" class for the current label/button
+                            inputs.forEach(         // diasble all other checkboxes
+                                (inputs) => {
+                                    if (inputs.id != currentInputID) {
+                                        inputs.checked = false;
+                                    }
+                                }
+                            );
+                            labels.forEach(         // disable all other labels
+                                (labels) => {
+                                    const thisInputID = labels.attributes.for["nodeValue"];
+                                    if (thisInputID != currentInputID) {
+                                        labels.classList.remove("active");
+                                    }
+                                }
+                            );
+                        });
+                    </script>
+
+
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="story_points" class="edit-label">Story Points:</label>
+                </div>
+                <div class="col-8">
+                    <!-- <input type="number" min="0" max="10" id="story_points" placeholder="Select a value between 0 and 10"> -->
+                    <div class="slidecontainer">
+                        <input name="story_points" type="range" min="0" max="10" value="0" class="slider"
+                            id="story_points">
+                    </div>
+                    <div class="slider-value-text"> This task will be worth ? story points </div>
+                </div>
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="description" class="edit-label">Description:</label>
+                </div>
+                <div class="col-8">
+                    <textarea name="description" id="description" rows="4" cols="50" class="form-control"></textarea>
+                </div>
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="name" class="edit-label">Stage:</label>
+                </div>
+                <div class="col-8">
+                    <input type="text" name="stage" id="stage" class="form-control">
+                </div>
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="name" class="edit-label">Assigned To:</label>
+                </div>
+                <div class="col-8">
+                    <select name="assigned_to" id="assigned_to" class="form-control">
+                        <!-- ADDING USER DATA DYNAMICALLY HERE -->
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="row input-row">
+                <div class="col-2  edit-label-div">
+                    <label for="bug_or_story" class="edit-label">Bug or Story?:</label>
+                </div>
+                <div class="col-8">
+                    <select name="bug_or_story" id="bug_or_story" class="form-control">
+                        <option value="bug">Bug</option>
+                        <option value="story">Story</option>
+                    </select>
+
+                </div>
+            </div>    
+        </form>
+        
+        
+        <div class="form-group">
+
+            <div class="text-center">
+                <button id="btn" type="button" class="btn submit-btn">Add</button>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore-compat.js"></script>
+    <script src="../../libs/jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../libs/popper/popper.min.js"></script>
+    <script src="../../libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script type="module" src="add_task.js"></script>
+</body>
+
+</html>
